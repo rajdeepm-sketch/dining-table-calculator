@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+}
+
+/* Custom range input styling for a cleaner look */
+input[type='range'] {
+  @apply appearance-none bg-gray-100 h-1.5 rounded-full outline-none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-amber-600 rounded-full cursor-pointer shadow-md transition-transform scale-100 hover:scale-110 active:scale-95;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  body {
+    @apply bg-white;
+  }
+}
+
